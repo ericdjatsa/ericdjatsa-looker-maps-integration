@@ -22,6 +22,7 @@ view: nearby_places {
   derived_table: {
     sql:
     WITH user_coordinates AS (
+      SELECT
         user_id,
         email,
         cast(latitude as string) as lat,
