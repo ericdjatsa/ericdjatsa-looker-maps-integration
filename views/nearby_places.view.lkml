@@ -22,7 +22,7 @@ view: nearby_places {
     FROM user_coordinates)
     SELECT
       loc.user_id,
-      loc.email,
+      loc.user_email,
       loc.user_address,
       loc.user_lat,
       loc.user_lng,
