@@ -16,7 +16,7 @@ persist_with: ericdjatsa_looker_maps_integration_default_datagroup
 
 
 explore: nearby_places {
-  # always_filter: {
-  #   #filters: [nearby_places.user_email: "decathlon-city-lille@example.com"]
-  # }
+  always_filter: {
+    filters: [ nearby_places.select_location_type: "gym", nearby_places.select_radius: "500"]
+  }
 }
