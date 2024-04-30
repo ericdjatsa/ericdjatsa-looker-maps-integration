@@ -18,6 +18,19 @@ persist_with: ericdjatsa_looker_maps_integration_default_datagroup
 explore: nearby_places {
 }
 
+view: sample_user_coordinates {
+  derived_table: {
+    sql:
+      SELECT * FROM UNNEST ([STRUCT<user_id STRING,email STRING,latitude NUMERIC,longitude NUMERIC>
+        ("user1","googlecloud-paris@example.com",48.87881851213283,2.3296058400039517),
+        ("user2", "decathlon-lille@example.com", 50.63459809473876, 3.063897382262143),
+        ("user3", "decathlon-paris-madeleine@example.com", 48.869961343648434, 2.3256177839061785)
+      ]))
+    ;;
+  }
+}
+
+
 view: nearby_places {
   derived_table: {
     sql:
