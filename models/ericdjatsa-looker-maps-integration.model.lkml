@@ -51,10 +51,11 @@ view: nearby_places {
     FROM user_coordinates)
     SELECT
       loc.user_id,
+      loc.email,
       JSON_VALUE(nearby_places, "$.name") AS name,
       JSON_VALUE(nearby_places, "$.lat") AS lat,
       JSON_VALUE(nearby_places, "$.lng") AS lng
-    FROM nearby_places_replies, UNNEST(nearby_places) as nearby_places
+    FROM loc, UNNEST(nearby_places_replies) as nearby_places
         ;;
   }
 
