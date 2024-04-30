@@ -29,7 +29,6 @@ view: nearby_places {
         cast(latitude as string) as lat,
         cast(longitude as string) as lon
       FROM ${sample_user_coordinates_in_bq.SQL_TABLE_NAME}
-    LIMIT 10
     ),
     loc AS (SELECT
       user_coordinates.user_id,
