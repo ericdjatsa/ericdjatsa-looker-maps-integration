@@ -31,6 +31,15 @@ view: sample_user_coordinates_in_bq {
     sql: ${TABLE}.user_id ;;
   }
 
+  dimension: address {
+    type: string
+    sql: ${TABLE}.address ;;
+    link: {
+      label: "See nearby gym"
+      url: "/explore/ericdjatsa-looker-maps-integration/nearby_places?fields=nearby_places.user_location,nearby_places.user_address,nearby_places.place_location,nearby_places.place_name,nearby_places.user_email&f[nearby_places.select_location_type]=gym&f[nearby_places.select_radius]=1000&f[nearby_places.user_email]={{email._value}}&sorts=nearby_places.user_location&limit=500&column_limit=50"
+    }
+  }
+
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.

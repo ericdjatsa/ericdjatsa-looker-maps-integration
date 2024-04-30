@@ -60,7 +60,16 @@ view: nearby_places {
 
   dimension: user_id {}
   dimension: user_email {}
-  dimension: user_address {}
+
+  dimension: user_address {
+    type: string
+    sql: ${TABLE}.user_address ;;
+    link: {
+      label: "See nearby gym"
+      url: "/explore/ericdjatsa-looker-maps-integration/nearby_places?fields=nearby_places.user_location,nearby_places.user_address,nearby_places.place_location,nearby_places.place_name,nearby_places.user_email&f[nearby_places.select_location_type]=gym&f[nearby_places.select_radius]=1000&f[nearby_places.user_email]={{user_email._value}}&sorts=nearby_places.user_location&limit=500&column_limit=50"
+    }
+  }
+
   dimension: user_lat {}
   dimension: user_lng {}
   dimension: user_location {
