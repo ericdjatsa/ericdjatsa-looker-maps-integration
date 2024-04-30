@@ -14,9 +14,9 @@ view: nearby_places {
     allowed_value: { label: "100m" value: "100"}
     allowed_value: { label: "500m" value: "500"}
     allowed_value: { label: "1km" value: "1000"}
-    allowed_value: { label: "5km" value: "1000"}
-    allowed_value: { label: "10km" value: "1000"}
-    allowed_value: { label: "20km" value: "1000"}
+    allowed_value: { label: "5km" value: "5000"}
+    allowed_value: { label: "10km" value: "10000"}
+    allowed_value: { label: "20km" value: "20000"}
   }
 
   derived_table: {
